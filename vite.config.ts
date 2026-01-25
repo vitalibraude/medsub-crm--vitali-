@@ -10,7 +10,7 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [react()],
     // Base path for GitHub Pages - שם הריפוזיטורי שלך
-    base: '/medsub-crm-vitali/', 
+    base: '/medsub-crm--vitali-/', 
     define: {
       // Polyfill process.env.API_KEY so it works in the browser
       // It tries to grab GEMINI_API_KEY (from GitHub Secrets) or API_KEY
