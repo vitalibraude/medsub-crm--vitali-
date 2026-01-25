@@ -16,6 +16,19 @@ console.log('%c🌐 Base URL:', 'color: #0284c7; font-weight: bold', import.meta
 console.log('%c🔧 Mode:', 'color: #0284c7; font-weight: bold', import.meta.env.MODE);
 console.log('%c━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━', 'color: #0ea5e9');
 
+// Check API Key
+const hasApiKey = localStorage.getItem('GEMINI_API_KEY') || process.env.API_KEY;
+if (!hasApiKey) {
+  console.log('%c⚠️ API Key Not Configured', 'color: #f59e0b; font-size: 14px; font-weight: bold');
+  console.log('%c💡 To enable AI features, run:', 'color: #0284c7');
+  console.log('%clocalStorage.setItem("GEMINI_API_KEY", "your-gemini-api-key-here")', 'background: #1e293b; color: #22c55e; padding: 4px 8px; border-radius: 4px;');
+  console.log('%cThen refresh the page.', 'color: #0284c7');
+  console.log('%c━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━', 'color: #0ea5e9');
+} else {
+  console.log('%c✅ API Key Configured', 'color: #22c55e; font-weight: bold');
+  console.log('%c━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━', 'color: #0ea5e9');
+}
+
 // Cleanup: Unregister any existing service workers that might be causing errors
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.getRegistrations().then((registrations) => {
