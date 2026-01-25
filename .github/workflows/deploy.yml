@@ -12,7 +12,7 @@ permissions:
 
 concurrency:
   group: "pages"
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -33,9 +33,10 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          # If you have set GEMINI_API_KEY in GitHub Secrets, it will be injected here.
-          # If not, the app will build but AI features might need a key entered manually or hardcoded (not recommended).
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
           
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
