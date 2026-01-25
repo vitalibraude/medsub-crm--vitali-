@@ -1,0 +1,5 @@
+{
+  "name": "MedSub CRM (Vitali)",
+  "description": "A client-side CRM for medical clinics managing subscriptions, patient data, and AI-driven insights.",
+  "requestFramePermissions": []
+}
