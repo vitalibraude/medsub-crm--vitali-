@@ -9,11 +9,31 @@ export function Contact() {
     message: '',
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // כאן תוכל להוסיף שליחה לשרת או WhatsApp
-    console.log('Form submitted:', formData);
-    alert('תודה! ניצור איתך קשר בהקדם');
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbxkriOJuwF-Kwu-fl8VQbtc-EHyxEWcTH4LAKLP3wBF5s1x8l8vpJ1tQ8B2_AFpVU0cOA/exec', {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      // Reset form
+      setFormData({ name: '', email: '', phone: '', message: '' });
+      alert('תודה! הפרטים נשלחו בהצלחה. ניצור איתך קשר בהקדם 🚀');
+    } catch (error) {
+      console.error('Error:', error);
+      alert('אופס! משהו השתבש. נסה שוב או צור קשר בטלפון.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -76,9 +96,10 @@ export function Contact() {
 
           <button
             type="submit"
-            className="w-full bg-gradient-to-r from-primary-600 to-primary-700 text-white py-4 px-8 rounded-lg font-bold text-lg hover:from-primary-700 hover:to-primary-800 transition-all transform hover:scale-[1.02] shadow-lg flex items-center justify-center gap-2"
+            disabled={isSubmitting}
+            className="w-full bg-gradient-to-r from-primary-600 to-primary-700 text-white py-4 px-8 rounded-lg font-bold text-lg hover:from-primary-700 hover:to-primary-800 transition-all transform hover:scale-[1.02] shadow-lg flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            <span>שליחה</span>
+            <span>{isSubmitting ? 'שולח...' : 'שליחה'}</span>
             <Send className="w-5 h-5" />
           </button>
         </form>
