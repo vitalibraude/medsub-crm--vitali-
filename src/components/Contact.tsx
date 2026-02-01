@@ -10,9 +10,25 @@ export function Contact() {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [phoneError, setPhoneError] = useState('');
+
+  const validatePhone = (phone: string) => {
+    const digitsOnly = phone.replace(/\D/g, '');
+    if (digitsOnly.length !== 9 && digitsOnly.length !== 10) {
+      setPhoneError('מספר טלפון חייב להכיל 9 או 10 ספרות');
+      return false;
+    }
+    setPhoneError('');
+    return true;
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!validatePhone(formData.phone)) {
+      return;
+    }
+    
     setIsSubmitting(true);
 
     try {
@@ -65,10 +81,18 @@ export function Contact() {
               <input
                 type="tel"
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all text-gray-900"
+                className={`w-full px-4 py-3 border ${phoneError ? 'border-red-500' : 'border-gray-300'} rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all text-gray-900`}
                 value={formData.phone}
-                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                onChange={(e) => {
+                  setFormData({ ...formData, phone: e.target.value });
+                  if (phoneError) validatePhone(e.target.value);
+                }}
+                onBlur={(e) => validatePhone(e.target.value)}
+                placeholder="050-1234567"
               />
+              {phoneError && (
+                <p className="text-red-500 text-sm mt-1">{phoneError}</p>
+              )}
             </div>
           </div>
 
