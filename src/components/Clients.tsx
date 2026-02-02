@@ -1,16 +1,16 @@
 const clients = [
-  'חברת טכנולוגיה א׳',
-  'סטארטאפ ב׳',
-  'עסק קמעונאי ג׳',
-  'חברת יעוץ ד׳',
-  'משרד עורכי דין ה׳',
-  'קליניקה רפואית ו׳',
-  'חברת נדל״ן ז׳',
-  'חברת שיווק ח׳',
-  'מסעדות רשת ט׳',
-  'חברת פיננסים י׳',
-  'אקדמיה יא׳',
-  'עמותה יב׳',
+  { name: 'TechBridge Solutions Ltd', logo: 'https://ui-avatars.com/api/?name=TB&background=0D47A1&color=fff&size=128&bold=true' },
+  { name: 'QuantumLeap Innovations', logo: 'https://ui-avatars.com/api/?name=QL&background=C2185B&color=fff&size=128&bold=true' },
+  { name: 'CloudNine Consulting', logo: 'https://ui-avatars.com/api/?name=CN&background=00897B&color=fff&size=128&bold=true' },
+  { name: 'DataStream Analytics', logo: 'https://ui-avatars.com/api/?name=DS&background=6A1B9A&color=fff&size=128&bold=true' },
+  { name: 'NextGen Enterprises', logo: 'https://ui-avatars.com/api/?name=NG&background=D84315&color=fff&size=128&bold=true' },
+  { name: 'SmartFlow Systems', logo: 'https://ui-avatars.com/api/?name=SF&background=0277BD&color=fff&size=128&bold=true' },
+  { name: 'Apex Digital Group', logo: 'https://ui-avatars.com/api/?name=AD&background=00695C&color=fff&size=128&bold=true' },
+  { name: 'Visionary Tech Partners', logo: 'https://ui-avatars.com/api/?name=VT&background=5D4037&color=fff&size=128&bold=true' },
+  { name: 'Innovate Pro Ltd', logo: 'https://ui-avatars.com/api/?name=IP&background=1565C0&color=fff&size=128&bold=true' },
+  { name: 'FutureWorks Corporation', logo: 'https://ui-avatars.com/api/?name=FW&background=AD1457&color=fff&size=128&bold=true' },
+  { name: 'Digital Horizon UK', logo: 'https://ui-avatars.com/api/?name=DH&background=2E7D32&color=fff&size=128&bold=true' },
+  { name: 'Momentum Strategies', logo: 'https://ui-avatars.com/api/?name=MS&background=F57C00&color=fff&size=128&bold=true' },
 ];
 
 export function Clients() {
@@ -24,9 +24,16 @@ export function Clients() {
           {clients.map((client, index) => (
             <div
               key={index}
-              className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all flex items-center justify-center text-center text-sm font-medium text-gray-700 hover:-translate-y-1"
+              className="bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition-all flex flex-col items-center justify-center gap-3 hover:-translate-y-1"
             >
-              {client}
+              <img
+                src={client.logo}
+                alt={client.name}
+                className="w-16 h-16 rounded-full object-cover"
+              />
+              <span className="text-xs font-medium text-gray-700 text-center leading-tight">
+                {client.name}
+              </span>
             </div>
           ))}
         </div>
