@@ -1,8 +1,9 @@
-import { Zap, Link2, Bot, Globe, Database, Lightbulb } from 'lucide-react';
+import { Zap, Link2, Bot, Globe, Database, Lightbulb, ArrowLeft } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
+import { Link } from 'react-router-dom';
 
 export function Services() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const services = [
     {
@@ -69,6 +70,17 @@ export function Services() {
               </div>
             );
           })}
+        </div>
+
+        {/* Button to Full Services Page */}
+        <div className="text-center mt-16">
+          <Link
+            to="/services"
+            className="inline-flex items-center gap-3 bg-gradient-to-r from-primary-600 to-primary-700 text-white px-10 py-4 rounded-full font-bold text-lg hover:from-primary-700 hover:to-primary-800 transition-all transform hover:scale-105 shadow-lg"
+          >
+            <span>{language === 'he' ? 'לכל השירותים המפורטים' : 'View All Detailed Services'}</span>
+            <ArrowLeft className="w-5 h-5" />
+          </Link>
         </div>
       </div>
     </section>
