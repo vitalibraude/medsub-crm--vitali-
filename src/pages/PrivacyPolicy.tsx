@@ -112,6 +112,11 @@ export function PrivacyPolicy() {
                 בכל מקרה בו יבוצעו במדיניות זו שינויים מהותיים בהוראות שעניינן השימוש במידע אישי שמסרת, תפורסם על-כך הודעה בעמוד הבית של האתרים.
               </p>
 
+              <h2 className="text-3xl font-bold mt-12 mb-4">הצהרה בדבר מערכות והטמעות</h2>
+              <p className="mb-6">
+                איננו שותפים רשמיים של חלק מהתוכנות המוצגות באתר. אנחנו יוצרים קשר עם החברות ועם השותפים ונותנים ומספקים הטמעות מלאות בהתאם למדיניות של כל אחת מן החברות המצוינות.
+              </p>
+
               <h2 className="text-3xl font-bold mt-12 mb-4">תנאי שימוש</h2>
               <ul className="list-disc pr-6 space-y-2 mb-6">
                 <li>השימוש באתר על תכניו והשירותים הניתנים בו, מוצעים לך בכפוף לקבלתך את כל התנאים הכלולים בתקנון זה</li>
@@ -196,6 +201,11 @@ export function PrivacyPolicy() {
               </p>
               <p className="mb-6">
                 Such requests should be directed to: <a href="mailto:vitalipavlovsk@gmail.com" className="text-primary-600 hover:text-primary-700">vitalipavlovsk@gmail.com</a>
+              </p>
+
+              <h2 className="text-3xl font-bold mt-12 mb-4">Systems and Implementation Disclaimer</h2>
+              <p className="mb-6">
+                We are not official partners of some of the software displayed on the site. We contact the companies and their partners and provide complete implementations according to the policies of each of the mentioned companies.
               </p>
 
               <h2 className="text-3xl font-bold mt-12 mb-4">Terms of Use</h2>
