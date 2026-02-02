@@ -3,6 +3,7 @@ import { Services } from './components/Services';
 import { TechPartners } from './components/TechPartners';
 import { Testimonials } from './components/Testimonials';
 import { Clients } from './components/Clients';
+import { Blog } from './components/Blog';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 
@@ -14,6 +15,7 @@ function App() {
       <TechPartners />
       <Testimonials />
       <Clients />
+      <Blog />
       <Contact />
       <Footer />
     </div>
