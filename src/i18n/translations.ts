@@ -39,8 +39,9 @@ export const translations = {
     process5Desc: 'ליווי מתמשך, עדכונים ופיתוחים נוספים לפי הצורך',
 
     // Tech Partners
-    techPartnersTitle: 'השותפים הטכנולוגיים שלנו',
+    techPartnersTitle: 'מערכות שאנחנו מבצעים הטמעה',
     techPartnersSubtitle: 'אנחנו עובדים עם הטכנולוגיות המתקדמות בעולם',
+    techPartnersDisclaimer: 'איננו שותפים רשמיים של חלק מהתוכנות המוצגות. אנחנו יוצרים קשר עם החברות ועם השותפים ונותנים ומספקים הטמעות מלאות בהתאם למדיניות של כל אחת מן החברות המצוינות.',
 
     // Testimonials
     testimonialsTitle: 'מה הלקוחות שלנו אומרים',
@@ -127,8 +128,9 @@ export const translations = {
     process5Desc: 'Continuous support, updates and additional development as needed',
 
     // Tech Partners
-    techPartnersTitle: 'Our Technology Partners',
+    techPartnersTitle: 'Systems We Implement',
     techPartnersSubtitle: 'We work with the most advanced technologies in the world',
+    techPartnersDisclaimer: 'We are not official partners of some of the software displayed. We contact the companies and their partners and provide complete implementations according to the policies of each of the mentioned companies.',
 
     // Testimonials
     testimonialsTitle: 'What Our Clients Say',

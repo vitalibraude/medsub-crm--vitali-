@@ -7,6 +7,14 @@ const partners = [
   { name: 'Meta Business', logo: 'https://cdn.simpleicons.org/meta/0668E1' },
   { name: 'WhatsApp Business', logo: 'https://cdn.simpleicons.org/whatsapp/25D366' },
   { name: 'Make.com', logo: 'https://cdn.simpleicons.org/make/6D00CC' },
+  { name: 'Monday.com', logo: 'https://cdn.simpleicons.org/monday/FF3D57' },
+  { name: 'Asana', logo: 'https://cdn.simpleicons.org/asana/F06A6A' },
+  { name: 'ClickUp', logo: 'https://cdn.simpleicons.org/clickup/7B68EE' },
+  { name: 'Salesforce', logo: 'https://cdn.simpleicons.org/salesforce/00A1E0' },
+  { name: 'SAP', logo: 'https://cdn.simpleicons.org/sap/0FAAFF' },
+  { name: 'Oracle', logo: 'https://cdn.simpleicons.org/oracle/F80000' },
+  { name: 'Priority', logo: 'https://cdn.simpleicons.org/databricks/FF3621' },
+  { name: 'n8n', logo: 'https://cdn.simpleicons.org/n8n/EA4B71' },
 ];
 
 export function TechPartners() {
@@ -18,6 +26,9 @@ export function TechPartners() {
         <h3 className="text-3xl font-bold text-center mb-12 text-gray-900">
           {t('techPartnersTitle')}
         </h3>
+        <p className="text-center text-gray-600 mb-8 max-w-3xl mx-auto">
+          {t('techPartnersDisclaimer')}
+        </p>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
           {partners.map((partner, index) => (
             <div
