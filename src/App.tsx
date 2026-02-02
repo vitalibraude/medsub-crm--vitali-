@@ -6,6 +6,8 @@ import { Logo } from './components/Logo';
 import { HomePage } from './pages/HomePage';
 import { ServicesPage } from './pages/ServicesPage';
 import { ServiceDetailPage } from './pages/ServiceDetailPage';
+import { AccessibilityStatement } from './pages/AccessibilityStatement';
+import { PrivacyPolicy } from './pages/PrivacyPolicy';
 import { useLanguage } from './i18n/LanguageContext';
 import { useEffect } from 'react';
 
@@ -27,6 +29,8 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/services/:category" element={<ServiceDetailPage />} />
+          <Route path="/accessibility" element={<AccessibilityStatement />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
         </Routes>
         
         <WhatsAppButton />

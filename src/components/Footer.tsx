@@ -1,8 +1,9 @@
 import { Facebook, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
+import { Link } from 'react-router-dom';
 
 export function Footer() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <footer className="bg-gray-900 text-gray-300 py-12 px-4">
@@ -59,8 +60,23 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
-          <p>{t('footerCopyright')}</p>
+        <div className="border-t border-gray-800 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="flex gap-6 text-sm">
+              <Link to="/accessibility" className="hover:text-primary-400 transition-colors">
+                {language === 'he' ? 'הצהרת נגישות' : 'Accessibility Statement'}
+              </Link>
+              <Link to="/privacy" className="hover:text-primary-400 transition-colors">
+                {language === 'he' ? 'מדיניות פרטיות' : 'Privacy Policy'}
+              </Link>
+              <Link to="/" className="hover:text-primary-400 transition-colors">
+                {language === 'he' ? 'דף הבית' : 'Home'}
+              </Link>
+            </div>
+            <p className="text-gray-500 text-sm text-center">
+              {t('footerCopyright')}
+            </p>
+          </div>
         </div>
       </div>
     </footer>
