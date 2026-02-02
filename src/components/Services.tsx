@@ -1,48 +1,51 @@
-import { Bot, Workflow, Database, Globe, Mail, Zap } from 'lucide-react';
-
-const services = [
-  {
-    icon: Database,
-    title: 'מערכות CRM לניהול קשרי לקוחות',
-    description: 'מערכות CRM מתקדמות שמסייעות לך לנהל את כל קשרי הלקוחות שלך במקום אחד',
-  },
-  {
-    icon: Bot,
-    title: 'תכנון ובניית בוטים וצ\'אט-בוטים',
-    description: 'בוטים חכמים בכל הפלטפורמות - WhatsApp, Instagram, Facebook ועוד',
-  },
-  {
-    icon: Workflow,
-    title: 'אינטגרציות ואוטומציה עסקית',
-    description: 'חיבור בין מערכות שונות ואוטומציה של תהליכים עסקיים מורכבים',
-  },
-  {
-    icon: Zap,
-    title: 'מערכות ERP לניהול משאבים',
-    description: 'פתרונות ERP מקיפים לניהול יעיל של כל משאבי הארגון',
-  },
-  {
-    icon: Globe,
-    title: 'עיצוב ופיתוח אתרים וממשקי Web',
-    description: 'אתרים מודרניים, מהירים ומותאמים אישית לצרכי העסק שלך',
-  },
-  {
-    icon: Mail,
-    title: 'מערכות דיוור ודפי נחיתה',
-    description: 'קמפיינים שיווקיים מתקדמים ודפי נחיתה ממירים',
-  },
-];
+import { Zap, Link2, Bot, Globe, Database, Lightbulb } from 'lucide-react';
+import { useLanguage } from '../i18n/LanguageContext';
 
 export function Services() {
+  const { t } = useLanguage();
+
+  const services = [
+    {
+      icon: Zap,
+      titleKey: 'service1Title' as const,
+      descKey: 'service1Desc' as const,
+    },
+    {
+      icon: Link2,
+      titleKey: 'service2Title' as const,
+      descKey: 'service2Desc' as const,
+    },
+    {
+      icon: Bot,
+      titleKey: 'service3Title' as const,
+      descKey: 'service3Desc' as const,
+    },
+    {
+      icon: Globe,
+      titleKey: 'service4Title' as const,
+      descKey: 'service4Desc' as const,
+    },
+    {
+      icon: Database,
+      titleKey: 'service5Title' as const,
+      descKey: 'service5Desc' as const,
+    },
+    {
+      icon: Lightbulb,
+      titleKey: 'service6Title' as const,
+      descKey: 'service6Desc' as const,
+    },
+  ];
+
   return (
     <section id="services" className="py-24 px-4 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
-            השירותים שלנו
+            {t('servicesTitle')}
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            פתרונות טכנולוגיים מתקדמים המותאמים לצרכים העסקיים שלכם
+            {t('servicesSubtitle')}
           </p>
         </div>
 
@@ -58,10 +61,10 @@ export function Services() {
                   <Icon className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-gray-900 group-hover:text-primary-600 transition-colors">
-                  {service.title}
+                  {t(service.titleKey)}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
-                  {service.description}
+                  {t(service.descKey)}
                 </p>
               </div>
             );

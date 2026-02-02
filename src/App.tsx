@@ -9,10 +9,21 @@ import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { WhatsAppButton } from './components/WhatsAppButton';
 import { AccessibilityMenu } from './components/AccessibilityMenu';
+import { LanguageToggle } from './components/LanguageToggle';
+import { useLanguage } from './i18n/LanguageContext';
+import { useEffect } from 'react';
 
 function App() {
+  const { language } = useLanguage();
+
+  useEffect(() => {
+    document.documentElement.dir = language === 'he' ? 'rtl' : 'ltr';
+    document.documentElement.lang = language;
+  }, [language]);
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+      <LanguageToggle />
       <Hero />
       <Services />
       <Process />

@@ -1,6 +1,9 @@
 import { Facebook, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
+import { useLanguage } from '../i18n/LanguageContext';
 
 export function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer className="bg-gray-900 text-gray-300 py-12 px-4">
       <div className="max-w-7xl mx-auto">
@@ -8,22 +11,22 @@ export function Footer() {
           <div>
             <h3 className="text-2xl font-bold text-white mb-4">Vitali AI</h3>
             <p className="text-gray-400 leading-relaxed">
-              הפרטנרים שלכם לייעול תהליכי עבודה בעזרת טכנולוגיה מתקדמת ובינה מלאכותית
+              {t('footerTagline')}
             </p>
           </div>
 
           <div>
-            <h4 className="text-lg font-bold text-white mb-4">יצירת קשר</h4>
+            <h4 className="text-lg font-bold text-white mb-4">{t('footerContactTitle')}</h4>
             <div className="space-y-3">
               <div>
-                <p className="text-sm text-gray-500 mb-2">🇮🇱 ישראל</p>
+                <p className="text-sm text-gray-500 mb-2">🇮🇱 {t('contactOfficeIsrael')}</p>
                 <a href="tel:0545696851" className="flex items-center gap-2 hover:text-primary-400 transition-colors">
                   <Phone className="w-5 h-5" />
                   <span>0545696851</span>
                 </a>
               </div>
               <div>
-                <p className="text-sm text-gray-500 mb-2">🇬🇧 בריטניה</p>
+                <p className="text-sm text-gray-500 mb-2">🇬🇧 {t('contactOfficeUK')}</p>
                 <a href="tel:07778924382" className="flex items-center gap-2 hover:text-primary-400 transition-colors">
                   <Phone className="w-5 h-5" />
                   <span>07778924382</span>
@@ -35,13 +38,13 @@ export function Footer() {
               </a>
               <div className="flex items-center gap-2">
                 <MapPin className="w-5 h-5" />
-                <span>תל אביב | לונדון</span>
+                <span>{t('contactOfficeIsrael')} | {t('contactOfficeUK')}</span>
               </div>
             </div>
           </div>
 
           <div>
-            <h4 className="text-lg font-bold text-white mb-4">עקבו אחרינו</h4>
+            <h4 className="text-lg font-bold text-white mb-4">{t('footerSocialTitle')}</h4>
             <div className="flex gap-4">
               <a href="#" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary-600 transition-colors">
                 <Facebook className="w-5 h-5" />
@@ -57,7 +60,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
-          <p>© 2026 Vitali AI - כל הזכויות שמורות</p>
+          <p>{t('footerCopyright')}</p>
         </div>
       </div>
     </footer>

@@ -1,3 +1,5 @@
+import { useLanguage } from '../i18n/LanguageContext';
+
 const partners = [
   { name: 'OpenAI', logo: 'https://cdn.simpleicons.org/openai/412991' },
   { name: 'Claude AI', logo: 'https://cdn.simpleicons.org/anthropic/191919' },
@@ -8,11 +10,13 @@ const partners = [
 ];
 
 export function TechPartners() {
+  const { t } = useLanguage();
+
   return (
     <section className="py-16 px-4 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         <h3 className="text-3xl font-bold text-center mb-12 text-gray-900">
-          שותפים טכנולוגיים
+          {t('techPartnersTitle')}
         </h3>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
           {partners.map((partner, index) => (

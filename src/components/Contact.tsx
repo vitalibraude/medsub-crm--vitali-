@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { Send } from 'lucide-react';
+import { useLanguage } from '../i18n/LanguageContext';
 
 export function Contact() {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -15,7 +17,7 @@ export function Contact() {
   const validatePhone = (phone: string) => {
     const digitsOnly = phone.replace(/\D/g, '');
     if (digitsOnly.length !== 9 && digitsOnly.length !== 10) {
-      setPhoneError('מספר טלפון חייב להכיל 9 או 10 ספרות');
+      setPhoneError(t('contactPhoneError'));
       return false;
     }
     setPhoneError('');
@@ -43,10 +45,10 @@ export function Contact() {
 
       // Reset form
       setFormData({ name: '', email: '', phone: '', message: '' });
-      alert('תודה! הפרטים נשלחו בהצלחה. ניצור איתך קשר בהקדם 🚀');
+      alert(t('contactSuccessMessage'));
     } catch (error) {
       console.error('Error:', error);
-      alert('אופס! משהו השתבש. נסה שוב או צור קשר בטלפון.');
+      alert(t('contactErrorMessage'));
     } finally {
       setIsSubmitting(false);
     }
@@ -57,19 +59,19 @@ export function Contact() {
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            בואו נדבר
+            {t('contactTitle')}
           </h2>
           <p className="text-xl text-primary-100">
-            מלאו את הפרטים ונחזור אליכם תוך 24 שעות
+            {t('contactSubtitle')}
           </p>
           <div className="mt-8 grid md:grid-cols-2 gap-6 text-right">
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-              <h3 className="text-xl font-bold mb-3">🇮🇱 ישראל - תל אביב</h3>
+              <h3 className="text-xl font-bold mb-3">🇮🇱 {t('contactOfficeIsrael')}</h3>
               <p className="text-primary-100 mb-2">📞 0545696851</p>
               <p className="text-primary-100">✉️ VITALIPAVLOVSK@GMAIL.COM</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-              <h3 className="text-xl font-bold mb-3">🇬🇧 בריטניה - לונדון</h3>
+              <h3 className="text-xl font-bold mb-3">🇬🇧 {t('contactOfficeUK')}</h3>
               <p className="text-primary-100 mb-2">📞 07778924382</p>
               <p className="text-primary-100">✉️ VITALIPAVLOVSK@GMAIL.COM</p>
             </div>
@@ -79,7 +81,7 @@ export function Contact() {
         <form onSubmit={handleSubmit} className="bg-white rounded-2xl p-8 shadow-2xl">
           <div className="grid md:grid-cols-2 gap-6 mb-6">
             <div>
-              <label className="block text-gray-700 font-medium mb-2">שם מלא</label>
+              <label className="block text-gray-700 font-medium mb-2">{t('contactFormName')}</label>
               <input
                 type="text"
                 required
@@ -89,7 +91,7 @@ export function Contact() {
               />
             </div>
             <div>
-              <label className="block text-gray-700 font-medium mb-2">טלפון</label>
+              <label className="block text-gray-700 font-medium mb-2">{t('contactFormPhone')}</label>
               <input
                 type="tel"
                 required
@@ -109,7 +111,7 @@ export function Contact() {
           </div>
 
           <div className="mb-6">
-            <label className="block text-gray-700 font-medium mb-2">אימייל</label>
+            <label className="block text-gray-700 font-medium mb-2">{t('contactFormEmail')}</label>
             <input
               type="email"
               required
@@ -120,7 +122,7 @@ export function Contact() {
           </div>
 
           <div className="mb-6">
-            <label className="block text-gray-700 font-medium mb-2">מה תרצו לספר לנו?</label>
+            <label className="block text-gray-700 font-medium mb-2">{t('contactFormMessage')}</label>
             <textarea
               rows={4}
               required
@@ -135,7 +137,7 @@ export function Contact() {
             disabled={isSubmitting}
             className="w-full bg-gradient-to-r from-primary-600 to-primary-700 text-white py-4 px-8 rounded-lg font-bold text-lg hover:from-primary-700 hover:to-primary-800 transition-all transform hover:scale-[1.02] shadow-lg flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            <span>{isSubmitting ? 'שולח...' : 'שליחה'}</span>
+            <span>{isSubmitting ? t('contactFormSubmitting') : t('contactFormSubmit')}</span>
             <Send className="w-5 h-5" />
           </button>
         </form>

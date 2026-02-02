@@ -13,12 +13,16 @@ const clients = [
   { name: 'Momentum Strategies', logo: 'https://ui-avatars.com/api/?name=MS&background=F57C00&color=fff&size=128&bold=true' },
 ];
 
+import { useLanguage } from '../i18n/LanguageContext';
+
 export function Clients() {
+  const { t } = useLanguage();
+
   return (
     <section className="py-16 px-4 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         <h3 className="text-3xl font-bold text-center mb-12 text-gray-900">
-          הלקוחות שלנו
+          {t('clientsTitle')}
         </h3>
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
           {clients.map((client, index) => (

@@ -4,5 +4,12 @@
 
 body {
   font-family: 'Heebo', sans-serif;
+}
+
+html[dir="rtl"] {
   direction: rtl;
+}
+
+html[dir="ltr"] {
+  direction: ltr;
 }
