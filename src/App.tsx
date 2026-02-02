@@ -5,6 +5,7 @@ import { LanguageToggle } from './components/LanguageToggle';
 import { Logo } from './components/Logo';
 import { HomePage } from './pages/HomePage';
 import { ServicesPage } from './pages/ServicesPage';
+import { ServiceDetailPage } from './pages/ServiceDetailPage';
 import { useLanguage } from './i18n/LanguageContext';
 import { useEffect } from 'react';
 
@@ -25,6 +26,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/services" element={<ServicesPage />} />
+          <Route path="/services/:category" element={<ServiceDetailPage />} />
         </Routes>
         
         <WhatsAppButton />
