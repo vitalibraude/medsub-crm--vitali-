@@ -10,6 +10,7 @@ import { Footer } from './components/Footer';
 import { WhatsAppButton } from './components/WhatsAppButton';
 import { AccessibilityMenu } from './components/AccessibilityMenu';
 import { LanguageToggle } from './components/LanguageToggle';
+import { Logo } from './components/Logo';
 import { useLanguage } from './i18n/LanguageContext';
 import { useEffect } from 'react';
 
@@ -23,6 +24,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+      <Logo />
       <LanguageToggle />
       <Hero />
       <Services />
