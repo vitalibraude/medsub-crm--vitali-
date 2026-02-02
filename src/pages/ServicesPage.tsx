@@ -1,9 +1,21 @@
 import { useLanguage } from '../i18n/LanguageContext';
 import { ArrowRight, Rocket, Factory, Bot, TrendingUp, Users, CreditCard, Cpu, Gauge, Network, Sparkles, MessageSquare, Zap, BarChart, Shield, Cloud } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { Footer } from '../components/Footer';
 
 export function ServicesPage() {
   const { t, language } = useLanguage();
+  const navigate = useNavigate();
+
+  const handleContactClick = () => {
+    navigate('/#contact');
+    setTimeout(() => {
+      const contactSection = document.getElementById('contact');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
+  };
 
   const categories = language === 'he' ? [
     {
@@ -287,9 +299,18 @@ export function ServicesPage() {
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
             {pageTitle}
           </h1>
-          <p className="text-xl md:text-2xl text-primary-100 max-w-3xl">
+          <p className="text-xl md:text-2xl text-primary-100 max-w-3xl mb-8">
             {pageSubtitle}
           </p>
+
+          <div className="flex gap-4 flex-wrap">
+            <button
+              onClick={handleContactClick}
+              className="bg-white text-primary-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-primary-50 transition-all transform hover:scale-105 shadow-xl"
+            >
+              {language === 'he' ? 'קבעו פגישת ייעוץ חינם' : 'Book a Free Consultation'}
+            </button>
+          </div>
         </div>
       </section>
 
@@ -349,14 +370,16 @@ export function ServicesPage() {
               ? 'בואו נדבר על הצרכים שלכם ונבנה יחד את הפתרון המושלם'
               : 'Let\'s talk about your needs and build the perfect solution together'}
           </p>
-          <Link
-            to="/#contact"
-            className="inline-block bg-white text-primary-600 px-10 py-4 rounded-full font-bold text-lg hover:bg-primary-50 transition-all transform hover:scale-105 shadow-xl"
+          <button
+            onClick={handleContactClick}
+            className="inline-block bg-white text-primary-600 px-10 py-4 rounded-full font-bold text-lg hover:bg-primary-50 transition-all transform hover:scale-105 shadow-xl cursor-pointer"
           >
             {language === 'he' ? 'צרו קשר עכשיו' : 'Contact Us Now'}
-          </Link>
+          </button>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 }
