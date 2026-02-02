@@ -6,6 +6,8 @@ import { Clients } from './components/Clients';
 import { Blog } from './components/Blog';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
+import { WhatsAppButton } from './components/WhatsAppButton';
+import { AccessibilityMenu } from './components/AccessibilityMenu';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
       <Blog />
       <Contact />
       <Footer />
+      <WhatsAppButton />
+      <AccessibilityMenu />
     </div>
   );
 }
