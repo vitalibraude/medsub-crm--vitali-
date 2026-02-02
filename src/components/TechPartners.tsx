@@ -1,10 +1,10 @@
 const partners = [
-  { name: 'OpenAI', logo: '🤖' },
-  { name: 'Claude AI', logo: '🧠' },
-  { name: 'Google Workspace', logo: '📧' },
-  { name: 'Meta Business', logo: '📱' },
-  { name: 'WhatsApp Business', logo: '💬' },
-  { name: 'Make.com', logo: '⚡' },
+  { name: 'OpenAI', logo: 'https://cdn.simpleicons.org/openai/412991' },
+  { name: 'Claude AI', logo: 'https://cdn.simpleicons.org/anthropic/191919' },
+  { name: 'Google Workspace', logo: 'https://cdn.simpleicons.org/google/4285F4' },
+  { name: 'Meta Business', logo: 'https://cdn.simpleicons.org/meta/0668E1' },
+  { name: 'WhatsApp Business', logo: 'https://cdn.simpleicons.org/whatsapp/25D366' },
+  { name: 'Make.com', logo: 'https://cdn.simpleicons.org/make/6D00CC' },
 ];
 
 export function TechPartners() {
@@ -20,10 +20,12 @@ export function TechPartners() {
               key={index}
               className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all flex flex-col items-center justify-center gap-3 group hover:-translate-y-1"
             >
-              <span className="text-5xl group-hover:scale-110 transition-transform">
-                {partner.logo}
-              </span>
-              <span className="text-sm font-medium text-gray-700">
+              <img
+                src={partner.logo}
+                alt={partner.name}
+                className="w-16 h-16 object-contain group-hover:scale-110 transition-transform"
+              />
+              <span className="text-sm font-medium text-gray-700 text-center">
                 {partner.name}
               </span>
             </div>
