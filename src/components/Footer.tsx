@@ -15,17 +15,27 @@ export function Footer() {
           <div>
             <h4 className="text-lg font-bold text-white mb-4">יצירת קשר</h4>
             <div className="space-y-3">
-              <a href="tel:050-0000000" className="flex items-center gap-2 hover:text-primary-400 transition-colors">
-                <Phone className="w-5 h-5" />
-                <span>050-000-0000</span>
-              </a>
-              <a href="mailto:info@vitali.ai" className="flex items-center gap-2 hover:text-primary-400 transition-colors">
+              <div>
+                <p className="text-sm text-gray-500 mb-2">🇮🇱 ישראל</p>
+                <a href="tel:0545696851" className="flex items-center gap-2 hover:text-primary-400 transition-colors">
+                  <Phone className="w-5 h-5" />
+                  <span>0545696851</span>
+                </a>
+              </div>
+              <div>
+                <p className="text-sm text-gray-500 mb-2">🇬🇧 בריטניה</p>
+                <a href="tel:07778924382" className="flex items-center gap-2 hover:text-primary-400 transition-colors">
+                  <Phone className="w-5 h-5" />
+                  <span>07778924382</span>
+                </a>
+              </div>
+              <a href="mailto:VITALIPAVLOVSK@GMAIL.COM" className="flex items-center gap-2 hover:text-primary-400 transition-colors">
                 <Mail className="w-5 h-5" />
-                <span>info@vitali.ai</span>
+                <span>VITALIPAVLOVSK@GMAIL.COM</span>
               </a>
               <div className="flex items-center gap-2">
                 <MapPin className="w-5 h-5" />
-                <span>תל אביב, ישראל</span>
+                <span>תל אביב | לונדון</span>
               </div>
             </div>
           </div>

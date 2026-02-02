@@ -62,6 +62,18 @@ export function Contact() {
           <p className="text-xl text-primary-100">
             מלאו את הפרטים ונחזור אליכם תוך 24 שעות
           </p>
+          <div className="mt-8 grid md:grid-cols-2 gap-6 text-right">
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+              <h3 className="text-xl font-bold mb-3">🇮🇱 ישראל - תל אביב</h3>
+              <p className="text-primary-100 mb-2">📞 0545696851</p>
+              <p className="text-primary-100">✉️ VITALIPAVLOVSK@GMAIL.COM</p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+              <h3 className="text-xl font-bold mb-3">🇬🇧 בריטניה - לונדון</h3>
+              <p className="text-primary-100 mb-2">📞 07778924382</p>
+              <p className="text-primary-100">✉️ VITALIPAVLOVSK@GMAIL.COM</p>
+            </div>
+          </div>
         </div>
 
         <form onSubmit={handleSubmit} className="bg-white rounded-2xl p-8 shadow-2xl">
